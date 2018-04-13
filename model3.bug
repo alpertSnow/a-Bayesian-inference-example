@@ -1,0 +1,10 @@
+model
+{
+    for (i in 1:N) {
+        x[i] ~ dnorm(mu, tau)
+    }
+    mu ~ dnorm(0.00000E+00, 1.00000E-04)
+    sd <- 1/sqrt(tau)
+    y ~ dnorm(mu, tau)
+    tau ~ dgamma(0.001, 0.001)
+}
